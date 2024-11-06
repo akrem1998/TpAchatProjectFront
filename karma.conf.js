@@ -19,8 +19,10 @@ module.exports = function (config) {
 
     urlRoot: '/karma/',
 
+    // Browser configuration for CI environment
     browsers: ['ChromeHeadless'],  // Using ChromeHeadless for CI environment
 
+    // Adjusting client settings
     client: {
       jasmine: {
         // Jasmine configuration (optional)
@@ -28,10 +30,12 @@ module.exports = function (config) {
       clearContext: false // Keep Jasmine Spec Runner visible
     },
 
+    // Suppress all duplicate traces in the HTML reporter
     jasmineHtmlReporter: {
       suppressAll: true // Remove duplicated traces
     },
 
+    // Configure the coverage reporter
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/crudtuto-Front'),
       subdir: '.',
@@ -41,11 +45,25 @@ module.exports = function (config) {
       ]
     },
 
+    // Enable the 'progress' reporter and HTML reporter for better visibility
     reporters: ['progress', 'kjhtml'],
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+
+    // Increase timeout for disconnect to 60 seconds
+    browserDisconnectTimeout: 60000,  // 60 seconds timeout for disconnect
+
+    // Ensure proper webpack preprocessor setup (if needed)
+    preprocessors: {
+      '**/*.js': ['webpack'],
+    },
+    webpack: {
+      // Example Webpack configuration if needed (adjust for your project)
+      mode: 'development',
+      devtool: 'inline-source-map',
+    }
   });
 };

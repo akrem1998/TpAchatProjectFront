@@ -11,8 +11,8 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
-      hostname: '193.95.57.13',
-      urlRoot: '/karma/'
+      urlRoot: '/karma/',
+      browsers: ['ChromeHeadless']
     ],
     client: {
       jasmine: {

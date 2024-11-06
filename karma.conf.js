@@ -11,9 +11,11 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
-      urlRoot: '/karma/',
-      browsers: ['ChromeHeadless']
     ],
+    urlRoot: '/karma/',  // Correct placement of urlRoot
+
+    browsers: ['ChromeHeadless'],  // Use ChromeHeadless for CI environment
+
     client: {
       jasmine: {
         // you can add configuration options for Jasmine here
@@ -39,7 +41,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome'],  // This line is redundant as ChromeHeadless is already specified
     singleRun: false,
     restartOnFileChange: true
   });

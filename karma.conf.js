@@ -53,7 +53,8 @@ module.exports = function (config) {
 
     // Webpack preprocessor configuration
     preprocessors: {
-      '**/*.js': ['webpack'], // Ensure webpack processes your JS files
+      '**/*.ts': ['webpack'], // Ensure webpack processes your TypeScript files (for Angular)
+      '**/*.js': ['webpack'], // If you have JS files, include them here as well
     },
     webpack: {
       mode: 'development', // Example webpack config for development

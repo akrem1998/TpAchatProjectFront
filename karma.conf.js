@@ -1,6 +1,3 @@
-// Karma configuration file, see link for more information
-// https://karma-runner.github.io/1.0/config/configuration-file.html
-
 module.exports = function (config) {
   config.set({
     basePath: '',
@@ -10,7 +7,8 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-webpack') // Add the webpack plugin here
     ],
     // Set hostname to the desired IP address (i.e., 193.95.57.13)
     hostname: '193.95.57.13',  // This will make Karma server accessible from this IP
@@ -53,17 +51,16 @@ module.exports = function (config) {
     singleRun: false,
     restartOnFileChange: true,
 
-    // Increase timeout for disconnect to 60 seconds
-    browserDisconnectTimeout: 60000,  // 60 seconds timeout for disconnect
-
-    // Ensure proper webpack preprocessor setup (if needed)
+    // Webpack preprocessor configuration
     preprocessors: {
-      '**/*.js': ['webpack'],
+      '**/*.js': ['webpack'], // Ensure webpack processes your JS files
     },
     webpack: {
-      // Example Webpack configuration if needed (adjust for your project)
-      mode: 'development',
+      mode: 'development', // Example webpack config for development
       devtool: 'inline-source-map',
-    }
+    },
+
+    // Increase timeout for disconnect to 60 seconds
+    browserDisconnectTimeout: 60000,  // 60 seconds timeout for disconnect
   });
 };

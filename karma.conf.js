@@ -12,22 +12,26 @@ module.exports = function (config) {
       require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
-    urlRoot: '/karma/',  // Correct placement of urlRoot
+    // Set hostname to the desired IP address (i.e., 193.95.57.13)
+    hostname: '193.95.57.13',  // This will make Karma server accessible from this IP
 
-    browsers: ['ChromeHeadless'],  // Use ChromeHeadless for CI environment
+    port: 9876,  // Port to listen for connections (use 9876 or another port if necessary)
+
+    urlRoot: '/karma/',
+
+    browsers: ['ChromeHeadless'],  // Using ChromeHeadless for CI environment
 
     client: {
       jasmine: {
-        // you can add configuration options for Jasmine here
-        // the possible options are listed at https://jasmine.github.io/api/edge/Configuration.html
-        // for example, you can disable the random execution with `random: false`
-        // or set a specific seed with `seed: 4321`
+        // Jasmine configuration (optional)
       },
-      clearContext: false // leave Jasmine Spec Runner output visible in browser
+      clearContext: false // Keep Jasmine Spec Runner visible
     },
+
     jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
+      suppressAll: true // Remove duplicated traces
     },
+
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/crudtuto-Front'),
       subdir: '.',
@@ -36,12 +40,11 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+
     reporters: ['progress', 'kjhtml'],
-    port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],  // This line is redundant as ChromeHeadless is already specified
     singleRun: false,
     restartOnFileChange: true
   });

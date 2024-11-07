@@ -17,8 +17,8 @@ FROM nginx:alpine
 # Copy the build output to the Nginx HTML directory
 COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
 
-# Expose port 80
-EXPOSE 80
+# Expose port 40
+EXPOSE 4042
 
 # Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]

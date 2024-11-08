@@ -18,7 +18,7 @@ FROM nginx:alpine
 COPY --from=build /app/dist/crudtuto-Front /usr/share/nginx/html
 
 # Expose port 40
-EXPOSE 4042
+EXPOSE 4200
 
 # Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]

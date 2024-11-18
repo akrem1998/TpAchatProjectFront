@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OperateurService {
-  readonly API_URL = '${environement.apiUrl}/operateur';
+  readonly API_URL = `${environement.apiUrl}/operateur`;
 
   constructor(private httpClient: HttpClient) { }
 

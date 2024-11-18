@@ -5,7 +5,7 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class SecteurActiviteService {
-  readonly API_URL = 'http://193.95.57.13:8082/SpringMVC/secteurActivite';
+  readonly API_URL = '${environement.apiUrl}/secteur-activite';
 
   constructor(private httpClient: HttpClient) { }
 

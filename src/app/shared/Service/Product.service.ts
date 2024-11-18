@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ProductService {
-  readonly API_URL = `${environement.apiUrl}/product`;
+  readonly API_URL = `${environment.apiUrl}/product`;
 
   constructor(private httpClient: HttpClient) { }
   getAllProducts() {

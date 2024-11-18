@@ -1,0 +1,8 @@
+{
+  "/SpringMVC": {
+    "target": "http://193.95.57.13:8082",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

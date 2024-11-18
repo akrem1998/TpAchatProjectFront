@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FactureService {
-  readonly API_URL = '${environement.apiUrl}facture'/;
+  readonly API_URL = '${environement.apiUrl}/facture';
 
   constructor(private httpClient: HttpClient) { }
 

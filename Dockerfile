@@ -3,6 +3,10 @@ FROM node:14 AS build
 
 WORKDIR /app
 
+# Clone your GitHub repository
+# Replace with your repository's URL
+RUN git clone https://github.com/akrem1998/TpAchatProjectFront .
+
 # Install Angular CLI and dependencies
 COPY package*.json ./
 RUN npm install -g @angular/cli@12.0.1 && npm install

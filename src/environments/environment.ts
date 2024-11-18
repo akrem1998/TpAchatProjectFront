@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
   apiUrl: 'http://193.95.57.13:8082/SpringMVC'
 };
 
